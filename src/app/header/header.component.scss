@@ -1,28 +1,48 @@
-.logo-img{
+.logo-img {
   height: 40px;
   width: 40px;
 }
 
-nav{
-  display: none;
-  &.active{
-    display: block;
-    position: fixed;
-    width: 60%;
-    max-width: 300px;
-    top: 0;
-    bottom : 0;
-    right: 0;
+nav {
+  position: fixed;
+  width: 60%;
+  max-width: 300px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #343a40;
+  transform: translateX(100%); // Fuera de la pantalla
+  transition: transform 0.3s ease; // Suaviza la animación
+  z-index: 1050; // Asegura que esté sobre otros elementos
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); // Añade un poco de sombra para resaltar
 
-    a:first-of-type {
+  &.active {
+    transform: translateX(0); // Dentro de la pantalla
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin: 10px 20px;
+
+    &:first-of-type {
       margin-top: 100px;
     }
-    a:last-of-type {
+
+    &:last-of-type {
       margin-bottom: 100px;
     }
-    button{
-      top: 30px;
-      right: 30px;
-    }
+  }
+
+  button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
 }
